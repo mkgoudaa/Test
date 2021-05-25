@@ -1,0 +1,40 @@
+package com.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class testing {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		System.out.println("passed");
+		//chromedriver exe 
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver.exe");
+		//initialize chrome browser
+		WebDriver driver=new ChromeDriver();
+		//open url
+		driver.get("https://artoftesting.com/samplesiteforselenium");
+		//maximize the browser
+		driver.manage().window().maximize();
+		
+		//dropdown
+		WebElement testDropDown = driver.findElement(By.id("testingDropdown"));
+		Select dropdown = new Select(testDropDown);
+		dropdown.selectByIndex(3);
+		//driver.findElement(By.id("email")).sendKeys("9776341526");
+		//driver.findElement(By.id("pass")).sendKeys("2bijayalaxmijagan1");
+		//driver.findElement(By.name("login")).click();
+		//driver.switchTo().alert().dismiss();
+		//Thread.sleep(7000);
+		//driver.findElement(By.xpath("//span[text()='Photo/Video']")).click();
+		Actions action=new Actions(driver);
+		WebElement searchbox=driver.findElement(By.id("fname"));
+		action.contextClick(searchbox).perform();
+		
+	}
+}

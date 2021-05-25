@@ -1,0 +1,25 @@
+package com.application.TestCase;
+
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+
+public class BaseClass {
+	public static WebDriver driver;
+	public static WebDriver wait;
+	Properties prop=new Properties();
+	Pages pages;
+	@BeforeClass()
+public void beforeTest() {
+	
+	System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+	driver=new ChromeDriver();
+	driver.get(prop.getProperty("URL"));
+	
+	pages=new Pages(driver,wait);
+	
+}
+
+}

@@ -1,0 +1,50 @@
+package com.application.PageObject;
+
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.application.TestCase.BaseClass;
+
+public class Pages {
+	WebDriver driver;
+	WebDriverWait wait;
+	Properties prop=new Properties();
+	
+	public Pages(WebDriver driver,WebDriverWait wait) {
+		this.driver=driver;
+		this.wait=wait;
+	
+	PageFactory.initElements(driver,this);
+	}	
+	@FindBy(css = ".login")
+	WebElement clickSignIn;	
+	
+	@FindBy(css = "#email")
+	WebElement userId;
+	
+	@FindBy(css = "#passwd")
+	WebElement password;
+	
+	@FindBy(css = "#SubmitLogin")
+	WebElement SubmitLogin;
+	
+	
+	public void login() {
+		clickSignIn.click();
+		userId.sendKeys("jetblue@grr.la");
+		password.sendKeys("jetblue");
+		SubmitLogin.click();
+		
+	}
+	public void selectTShrits() {
+		
+	}
+	
+	}
+
+

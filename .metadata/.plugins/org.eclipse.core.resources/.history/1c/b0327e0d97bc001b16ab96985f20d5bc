@@ -1,0 +1,11 @@
+package com.application.TestCase;
+
+public class BaseClass {
+	
+public void beforeTest() {
+	
+	System.setProperty("webdriver.chrome.driver", "./");
+	
+}
+
+}
